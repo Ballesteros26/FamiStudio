@@ -83,7 +83,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           if ! git diff --staged --quiet; then
             git commit -m "Chore: 自动解压并删除多种格式压缩包"
-            git pull --rebase origin main
+            git pull --rebase origin master
             git push
           else
             echo "没有文件变动需要提交。"
