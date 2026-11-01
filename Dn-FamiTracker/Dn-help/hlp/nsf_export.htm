@@ -1,0 +1,83 @@
+<HTML>
+    <HEAD>
+        <TITLE></TITLE>
+        <META NAME="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </HEAD>
+    <BODY>
+        <span class="topic">NSF export</span><hr>
+
+        <p class="text">
+            NSF (Nintendo Sound Format, invented by Kevin Horton) is a type of file used to represent NES music, initially developed for storing ripped game music. That means NSF is not a native music format, but a small program that plays the music using the NES&#39;s CPU in a slightly similar hardware architecture.<br />
+            Dn-FamiTracker compresses and compiles the module data and attaches a player program when exporing the NSF file.
+            </p>
+        <p class="text">
+            To export NSF files, select <code>Create NSF</code> from the File 
+            menu to open the NSF export window.<br />
+            The NSF file options contains some options related to the NSF file 
+            format: the song information fields is the same as in the control 
+            panel.<br />
+            There is also a system type option: <code>NTSC</code>,
+            <code>PAL</code> or <code>Dual</code>. Select <code>Dual</code> if 
+            you want the NSF to be playable on both NTSC and PAL systems.<br />
+            The <code>Add. data</code> checkbox indicates generating supporting 
+            assembly code to be used with ASM or BIN export when compiling an 
+            NSF file from source.</p>
+        <p class="text">
+            A few other formats beside NSF are also available:</p>
+
+        <UL class="text">
+            <LI>
+                <b>NSF</b><br />
+                Creates an NSF file.
+                <br /><br /></LI>
+            <LI>
+                <b>NSFe</b><br />
+                Creates an NSFe file with extra metadata for track labels, track
+                times, and comments.
+                <br /><br /></LI>
+            <LI>
+                <b>NSF2</b><br />
+                Creates an NSF-compatible file containing NSFe metadata. This
+                metadata is safely ignored in older NSF players.
+                <br /><br /></LI>
+            <LI>
+                <b>NES</b><br />
+                Encapsulates an NSF into an NROM NES file that can be played in
+                emulators or with flash carts like PowerPaks and Everdrives.
+                <br />
+                Note that <b>only non-expansion audio, non-bankswitching modules
+                whose total data is smaller than 32KB</b> are supported.
+                <br /><br /></LI>
+            <LI>
+                <b>BIN</b><br />
+                Stores only the music data and DPCM samples in separate files
+                for use with NSF driver sources.
+                <br /><br /></LI>
+            <LI>
+                <b>PRG</b><br />
+                Creates a single 32 kB program ROM file, ready to be used with a
+                NROM-compatible cart for playback on NES hardware.<br />
+                Note that <b>only non-expansion audio, non-bankswitching modules
+                whose total data is smaller than 32KB</b> are supported.
+                <br /><br /></LI>
+            <LI>
+                <b>ASM</b><br />
+                Stores the music data and samples in CA65 assembly format that
+                can be used with driver sources.
+                <br /></LI>
+        </UL>
+
+        <p class="text">
+            As of Dn-FT version 0.5.0.2, the export plugin system has been disabled due to a potential security
+            <a href="https://github.com/Dn-Programming-Core-Management/Dn-FamiTracker/issues/232">attack vector</a>.<br />
+            In previous versions until vanilla 0.3.5, an export plugin system 
+            was added that allows exporting to custom formats. New export 
+            targets would appear in the drop-down menu when export plugin DLLs 
+            were added.<br /></p>
+
+    <hr />
+    <span class="footer">Back to <a href="interface.htm">interface</a> &middot; <a href="main_index.htm">main index</a></span>
+
+    </BODY>
+</HTML>

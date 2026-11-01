@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio 8.0">
+    <TITLE></TITLE>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+    <span class="topic">Pattern editor</span><hr />
+
+    <p class="text">
+        The pattern editor consists of all channels and has the following layout:</p>
+
+    <img id="img" src="img/pattern.png" alt="Screenshot of pattern editor">
+    <br />
+
+    <p class="text">
+        All fields except note, octave and effect letter are in hexadecimal.</p>
+
+    <ul class="text">
+        <li><b>Note and octave</b><br />
+            <p>
+                Displays the note and octave, or the commands note cut
+                <b><code>(---)</code></b> and note release
+                <b><code>(===)</code></b>.</p>
+            <ul class="text">
+                <li>Note cut immediately silences the channel.</li>
+                <li>Note release activates the instrument release sequences.</li>
+            </ul>
+            <p>
+                The editor must be in record mode to insert notes in this column, toggle record / normal mode with the space key.</p>
+            <p>
+                Notes are located on keyboard keys:
+                <b><code>Z</code></b> = C,
+                <b><code>S</code></b> = C#,
+                <b><code>X</code></b> = D,
+                <b><code>D</code></b> = D#,
+                <b><code>C</code></b> = E...
+                (<b><code>Q</code></b>,
+                <b><code>2</code></b>,
+                <b><code>W</code></b> is one octave higher, for example)</p>
+            <p>
+                Default key for note cut is <b><code>1</code></b> and note release is <b><code>\</code></b>, but both can be changed in the configuration window and general tab.</p>
+            <p>
+                Octave can be stepped up and down with numpad keys <b><code>/</code></b> and <b><code>*</code></b>, but it can be configured in the Shortcuts configuration menu.</p>
+            <p>
+                <i>Note:</i> Notes with no assigned DPCM samples or notes that reaches beyond the pitch table will be displayed with a red color!</p>
+        </li>
+        <li>
+            <b>Instrument column</b><br />
+            <p>
+                Instrument to use. The selected instrument is automatically inserted unless the instrument mask option is enabled in the Edit menu. If cleared then the previous instrument will be used.</p>
+            <p>
+                A Hold Instrument command can be inserted by pressing the H key, which will write <b><code>&&</code></b> on the instrument column. This command will hold any instrument envelope state from a previous note. This was implemented in FamiTracker 0.5.0 beta 3, and ported since 0CC-FamiTracker version 0.3.14.3.</p>
+            <p>
+                <i>Note:</i> Missing or incompatible instruments will be displayed with a red color!</p>
+        </li>
+        <li>
+            <b>Volume column</b><br />
+            <p>
+                Sets the volume for the channel, range 0 - F. Only functional for channels that support volume control, such as pulse and noise channels for 2A03.</p>
+        </li>
+        <li>
+            <b>Channel effects</b><br />
+            <p>
+                Used for channel effects. Format is <b>Yxx</b>, where <b>Y</b> = effect type and <b>xx</b> = effect parameter.</p>
+            <p>
+                Additional effect-columns can be used by clicking the arrows in the channel header.</p>
+            <a href="effect_list.htm">See this page for available effects.</a>
+            <br />
+        </li>
+    </ul>
+
+    <p class="text">
+        Use insert-key to insert rows and delete-key to delete rows. Backspace will remove the previous row.
+        Each field can be cleared by using the <b><code>-</code></b> (dash) key.</p>
+
+    <p class="text">
+        Channels can be muted by clicking it's name in the channel header, double clicking
+        makes it play solo. Shortcuts for these
+        commands are <b>Alt+F9</b> &amp; <b>Alt+F10</b>.</p>
+
+    <p class="text">
+        Selections can be done in this area with support for drag and drop operations. For selections, these commands are available:</p>
+    <ul class="text">
+        <li>
+            <p>
+                <b>Ctrl+A</b> (first time) = select whole channel, <b>Ctrl+A</b> (second time) = select all channels</p>
+        </li>
+        <li>
+            <p>
+                <b>Ctrl+C</b> = copy, <b>Ctrl+X</b> = cut, <b>Ctrl+V</b> = paste</p>
+        </li>
+        <li>
+            <p>
+                <b>Ctrl+mouse wheel</b> = transpose</p>
+        </li>
+        <li>
+            <p>
+                <b>Shift+mouse wheel</b> = shift instrument/volume/effect values up/down</p>
+        </li>
+        <li>
+            <p>
+                Special commands: Use <b>Shift+Copy</b> to copy volume column as text.</p>
+        </li>
+    </ul>
+
+    <p class="text">
+        Additional keys can be found in <a href="shortcuts.htm">key command-section</a>.</p>
+
+    <p class="text">
+        Related sections:</p>
+
+    <ul class="text">
+        <li>
+            <a href="toolbar.htm">Toolbar</a></li>
+        <li>
+            <a href="control_panel.htm">Control panel</a></li>
+    </ul>
+
+    <hr />
+    <span class="footer">Back to <a href="interface.htm">interface</a> &middot; <a href="main_index.htm">main index</a></span>
+
+</BODY>
+</HTML>

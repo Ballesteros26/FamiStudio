@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="ASAN-Debug|Win32">
+      <Configuration>ASAN-Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ASAN-Debug|x64">
+      <Configuration>ASAN-Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ASAN-Release|Win32">
+      <Configuration>ASAN-Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ASAN-Release|x64">
+      <Configuration>ASAN-Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{afd2f6e3-e658-4a1b-a691-8f10a858321b}</ProjectGuid>
+    <RootNamespace>hlp</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(SolutionName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(SolutionName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(SolutionName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(SolutionName)</TargetName>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(SolutionName)</TargetName>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(SolutionName)</TargetName>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(SolutionName)</TargetName>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(SolutionName)</TargetName>
+    <TargetExt>.chm</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ASAN-Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\res\export_report.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <CustomBuild Include="Dn-FamiTracker.hhp">
+      <FileType>Document</FileType>
+      <Command>call $(ProjectDir)compile-chm.bat "$(OutDir)"</Command>
+      <Message>Making help file...</Message>
+      <Outputs>$(OutDir)$(SolutionName).chm</Outputs>
+      <AdditionalInputs>HTMLDefines.h;%(AdditionalInputs)</AdditionalInputs>
+    </CustomBuild>
+    <None Include="2a03.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="bookmark_manager.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="changelog.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <CustomBuild Include="changelog-template.htm">
+      <DeploymentContent>true</DeploymentContent>
+      <Command>call $(ProjectDir)update-htm-templates.bat</Command>
+      <Message>Updating changelog.htm.</Message>
+      <Outputs>$(ProjectDir)changelog.htm;$(ProjectDir)license.htm;%(Outputs)</Outputs>
+      <BuildInParallel>true</BuildInParallel>
+      <DeploymentContent>true</DeploymentContent>
+      <TreatOutputAsContent>true</TreatOutputAsContent>
+      <AdditionalInputs>$(ProjectDir)license-template.htm;$(SolutionDir)CHANGELOG.md;$(SolutionDir)LICENSE.md;$(SolutionDir)LICENSE-GPLv2.txt;$(SolutionDir)LICENSE-GPLv3.txt;$(SolutionDir)LICENSE-MIT-0.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Message>Updating templated pages.</Message>
+    </CustomBuild>
+    <None Include="command_line.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="comments.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="configuration.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_appearance.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_emulation.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_general.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_gui.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_midi.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_mixer.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_shortcuts.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_sound.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="config_version.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="control_panel.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="detune_settings.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="Dn-FamiTracker.hhc" />
+    <None Include="Dn-FamiTracker.hhk" />
+    <None Include="dpcm_editor.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="dpcm_import.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="effect_list.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="export_wave.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="faq.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="fds.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="groove_settings.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="instruments.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="interface.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="main_index.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menus.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_edit.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_file.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_help.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_instrument.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_module.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_pattern.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_song.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_tracker.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu_view.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="mmc5.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="n163.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="nsf_export.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="pattern_editor.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="performance.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="properties.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="shortcuts.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="sound.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="sound_overview.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="speed.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="style.css" />
+    <None Include="sunsoft.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="text_export.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="toolbar.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="vrc6.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="vrc7.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\bookmark_manager.png" />
+    <Image Include="img\chip_2A03.png" />
+    <Image Include="img\chip_FDS.png" />
+    <Image Include="img\chip_MMC5.PNG" />
+    <Image Include="img\chip_N163.png" />
+    <Image Include="img\chip_S5B.png" />
+    <Image Include="img\chip_VRC6.PNG" />
+    <Image Include="img\chip_VRC7.png" />
+    <Image Include="img\detune_settings.png" />
+    <Image Include="img\device_mix_offset.png" />
+    <Image Include="img\dpcm_editor.png" />
+    <Image Include="img\dpcm_import.png" />
+    <Image Include="img\expansion_sound.png" />
+    <Image Include="img\export_wav.png" />
+    <Image Include="img\fds_fm_table.PNG" />
+    <Image Include="img\frame_editor.png" />
+    <Image Include="img\groove_settings.png" />
+    <Image Include="img\Icon.png" />
+    <Image Include="img\import_file.png" />
+    <Image Include="img\inst_2a03.png" />
+    <Image Include="img\inst_dpcm.png" />
+    <Image Include="img\inst_fds.png" />
+    <Image Include="img\inst_n163.png" />
+    <Image Include="img\inst_sun5.png" />
+    <Image Include="img\inst_sun5_nmode.png" />
+    <Image Include="img\inst_vrc7.png" />
+    <Image Include="img\module_comments.png" />
+    <Image Include="img\opll_settings.png" />
+    <Image Include="img\pattern.png" />
+    <Image Include="img\pcm_import.png" />
+    <Image Include="img\pitch_mode.png" />
+    <Image Include="img\properties.png" />
+    <Image Include="img\s5b_env_0-3,_9.png" />
+    <Image Include="img\s5b_env_4-7,_f.png" />
+    <Image Include="img\s5b_env_8.png" />
+    <Image Include="img\s5b_env_a.png" />
+    <Image Include="img\s5b_env_b.png" />
+    <Image Include="img\s5b_env_c.png" />
+    <Image Include="img\s5b_env_d.png" />
+    <Image Include="img\s5b_env_e.png" />
+    <Image Include="img\song_and_edit_settings.png" />
+    <Image Include="img\song_and_edit_settings_modified.png" />
+    <Image Include="img\song_editor.png" />
+    <Image Include="img\song_information_and_instrument_list.png" />
+    <Image Include="img\toolbar1.png" />
+    <Image Include="img\toolbar2.png" />
+    <Image Include="img\vibrato.png" />
+    <Image Include="img\wave_export.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,116 @@
+/*
+** Dn-FamiTracker - NES/Famicom sound tracker
+** Copyright (C) 2020-2025 D.P.C.M.
+** FamiTracker Copyright (C) 2005-2020 Jonathan Liss
+** 0CC-FamiTracker Copyright (C) 2014-2018 HertzDevil
+**
+** This program is free software: you can redistribute it and/or modify
+** it under the terms of the GNU General Public License as published by
+** the Free Software Foundation, either version 3 of the License, or
+** (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program. If not, see https://www.gnu.org/licenses/.
+*/
+
+
+#pragma once
+
+#include "stdafx.h"
+#include <utility>
+
+// // // common classes for frame editor
+
+class CFamiTrackerDoc;		// // //
+
+class CFrameClipData {
+public:
+	// Constructor/desctructor
+	CFrameClipData();
+	CFrameClipData(int Channels, int Frames);
+	virtual ~CFrameClipData();
+
+	SIZE_T GetAllocSize() const;	// Get memory size in bytes
+	void ToMem(HGLOBAL hMem);		// Copy structures to memory
+	void FromMem(HGLOBAL hMem);		// Copy structures from memory
+	
+	int  GetFrame(int Frame, int Channel) const;
+	void SetFrame(int Frame, int Channel, int Pattern);
+
+public:
+	// Clip info
+	struct {
+		int Channels;
+		int Frames;
+		int FirstChannel;
+		struct {
+			int SourceRowStart;
+			int SourceRowEnd;
+		} OleInfo;
+	} ClipInfo;
+	
+	// Clip data
+	int *pFrames = nullptr;
+	int iSize = 0;
+};
+
+// // // Frame editor cursor
+struct CFrameCursorPos
+{
+	CFrameCursorPos() = default;
+	CFrameCursorPos(int Frame, int Channel) : m_iFrame(Frame), m_iChannel(Channel) { }
+
+	int m_iFrame = 0;
+	int m_iChannel = 0;
+};
+
+// // // Frame editor selection
+struct CFrameSelection
+{
+	int GetFrameStart() const;
+	int GetFrameEnd() const;
+	int GetChanStart() const;
+	int GetChanEnd() const;
+
+	void Normalize(CFrameCursorPos &Begin, CFrameCursorPos &End) const;		// // //
+	CFrameSelection GetNormalized() const;		// // //
+
+	CFrameCursorPos m_cpStart;
+	CFrameCursorPos m_cpEnd;
+};
+
+struct CFrameIterator : public CFrameCursorPos		// // //
+{
+public:
+	CFrameIterator(const CFrameIterator &it);
+	CFrameIterator(CFamiTrackerDoc *const pDoc, int Track, const CFrameCursorPos &Pos);
+	CFrameIterator(const CFamiTrackerDoc *const pDoc, int Track, const CFrameCursorPos &Pos);
+
+	static std::pair<CFrameIterator, CFrameIterator> FromCursor(const CFrameCursorPos &Pos, CFamiTrackerDoc *const pDoc, int Track);
+	static std::pair<CFrameIterator, CFrameIterator> FromSelection(const CFrameSelection &Sel, CFamiTrackerDoc *const pDoc, int Track);
+	
+	int Get(int Channel) const; // use int& output parameter?
+	void Set(int Channel, int Pattern);
+
+	CFrameIterator &operator+=(const int Frames);
+	CFrameIterator &operator-=(const int Frames);
+	CFrameIterator &operator++();
+	CFrameIterator operator++(int);
+	CFrameIterator &operator--();
+	CFrameIterator operator--(int);
+	bool operator ==(const CFrameIterator &other) const;
+
+private:
+	int NormalizeFrame(int Frame) const;
+
+public:
+	int m_iTrack;
+
+private:
+	CFamiTrackerDoc *m_pDocument;
+};

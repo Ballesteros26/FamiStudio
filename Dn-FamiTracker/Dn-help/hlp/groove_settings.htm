@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio 8.0">
+    <TITLE></TITLE>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+
+    <span class="topic">Groove Settings</span><hr />
+
+    <p class="text">
+        The groove settings dialog is used to edit and manage the module's grooves.</p>
+
+    <p class="text">
+        <img id="IMG1" style="FONT-SIZE: 10pt" src="img/groove_settings.png" alt="Screenshot of groove settings dialog"></p>
+
+<h2 class="bold">Groove</h2>
+    <p class="text">
+        A groove is a sequence of speed commands that changes the speed every row.
+        This can be used in place of long chains of
+        <a href="effect_list.htm#Speed"><b>Fxx</b></a> commands to save pattern data.</p>
+    <p class="text">
+        Each module may store up to:
+        <ul class="text">
+            <li>32 grooves;</li>
+            <li>255 groove bytes; (each non-empty groove uses 1 byte per entry plus 2 bytes)</li>
+            <li>128 entries per groove.</li>
+        </ul></p>
+
+
+<h2 class="bold">Groove list</h2>
+
+    <p class="text">
+        Lists the module's groove data.</p>
+
+    <p>
+        <span class="gray">Up</span><br />
+        <span class="text">Moves the selected groove data up one index.</span></p>
+
+    <p>
+        <span class="gray">Down</span><br />
+        <span class="text">Moves the selected groove data down one index.</span></p>
+
+    <p>
+        <span class="gray">Clear</span><br />
+        <span class="text">Deletes the selected groove data.</span></p>
+
+    <p>
+        <span class="gray">Clear all</span><br />
+        <span class="text">Deletes all groove data.</span></p>
+
+
+<h2 class="bold">Groove editor</h2>
+
+    <p class="text">
+        The groove editor allows the user to modify the groove pattern.</p>
+
+    <p>
+        <span class="gray">Move up</span><br />
+        <span class="text">Moves the selected speed command up.</span></p>
+
+    <p>
+        <span class="gray">Move down</span><br />
+        <span class="text">Moves the selected speed command down.</span></p>
+
+    <p>
+        <span class="gray">Generate</span><br />
+        <span class="text">Generates a speed sequence <b>x</b> / <b>y</b>, or
+        <b>x</b> ticks in <b>y</b> rows. Inputs for <b>x</b> and <b>y</b> are provided in the
+        textboxes next to the button. The sequence won't be generated if the resulting speed is less than one.</span></p>
+
+    <p>
+        <span class="gray">Pad</span><br />
+        <span class="text">Padding inserts the specified entry after each groove
+        entry, so that the average speed is halved. All entries in the groove must
+        be greater than the pad amount.</span></p>
+
+    <p>
+        <span class="gray">Expand</span><br />
+        <span class="text">Halves the groove's average speed and works only if
+        all entries are greater than or equal to 2.</span></p>
+
+    <p>
+        <span class="gray">Shrink</span><br />
+        <span class="text">Doubles the average speed and works only when the
+        groove length is a multiple of 2.</span></p>
+
+    <hr />
+    <span class="footer">Back to <a href="interface.htm">interface</a> &middot; <a href="main_index.htm">main index</a></span>
+
+</BODY>
+</HTML>

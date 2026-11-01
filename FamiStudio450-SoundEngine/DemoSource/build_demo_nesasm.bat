@@ -1,0 +1,3 @@
+set NES_INCLUDE=..\
+NESASM3 demo_nesasm.asm
+copy demo_nesasm.nes ..\

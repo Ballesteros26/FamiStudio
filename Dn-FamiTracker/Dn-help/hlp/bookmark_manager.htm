@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio 8.0">
+    <TITLE></TITLE>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+
+    <span class="topic">Bookmark manager</span><hr />
+
+    <p class="text">
+        The bookmark manager is used to manage bookmarks.</p>
+
+    <p class="text">
+        <img id="IMG1" style="FONT-SIZE: 10pt" src="img/bookmark_manager.png" alt="Screenshot of bookmark manager dialog"></p>
+
+<h2 class="bold">Bookmark</h2>
+
+    <p class="text">
+        A bookmark is a highlight in the pattern editor at a specified frame and row.
+        It resets the row highlight pattern, and may define a new row highlight pattern.</p>
+
+    <p class="text">
+        Each bookmark contains:
+        
+        <ul class="text">
+            <li>A name, which defaults to "Bookmark" and comes with an index if
+            created from the pattern editor directly;</li>
+            <li>A frame index and a row index, which indicate the position of
+            the bookmark. Bookmarks reposition themselves upon performing frame
+            actions such as inserting or removing frames;</li>
+            <li>Highlight settings which override the previous value of the
+            track if enabled. Using bookmarks, it is possible to change the row
+            highlight intervals in the middle of a track. Disabling "Apply to
+            all following frames" will keep the highlight distance to the
+            current frame, so that the next frame will not use the settings of
+            this bookmark.</li>
+        </ul></p>
+
+<h2 class="bold">Bookmark Editor</h2>
+
+    <p class="text">
+        This allows the user to modify a bookmark.</p>
+
+<h2 class="bold">Bookmark List</h2>
+
+    <p class="text">
+        Lists the module's bookmark data.</p>
+
+    <p>
+        <span class="gray">Move Up</span><br />
+        <span class="text">Moves the selected bookmark up one index.</span></p>
+
+    <p>
+        <span class="gray">Move Down</span><br />
+        <span class="text">Moves the selected bookmark down one index.</span></p>
+
+    <p>
+        <span class="gray">Remove</span><br />
+        <span class="text">Deletes the selected bookmark.</span></p>
+
+    <p>
+        <span class="gray">Clear all</span><br />
+        <span class="text">Deletes all bookmark data.</span></p>
+
+    <p class="text">
+        The bookmark list supports these keyboard shortcuts:
+        
+        <ul class="text">
+            <li>Ctrl + Up / Down for moving the currently selected bookmark;</li>
+            <li>Insert for creating a new bookmark;</li>
+            <li>Delete for removing the currently selected bookmark.</li>
+        </ul></p>
+
+    <hr />
+    <span class="footer">Back to <a href="interface.htm">interface</a> &middot; <a href="main_index.htm">main index</a></span>
+
+</BODY>
+</HTML>

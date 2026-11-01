@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 8.0">
+<TITLE></TITLE>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</HEAD>
+<BODY>
+<span class="topic">Module properties</span><hr />
+
+    <p>
+        <img id="IMG1" src="img/properties.png" alt="Screenshot of module properties"></p>
+
+    <p class="text">
+        The module properties is used to manage songs, configure expansion chip,
+        vibrato style, and pitch mode.</p>
+
+<h2 class="bold">Song editor</h2>
+
+    <p>
+        <img id="2" src="img/song_editor.png" alt="Screenshot of song editor section"></p>
+    <p class="text">
+        The song editor is used to manage multiple songs in a single module. The same
+        instrument set will be used for all songs, and up to 64 songs are supported in a
+        single file.</p>
+
+    <p>
+        <img id="IMG3" src="img/import_file.png" alt="Screenshot of Import file dialog"></p>
+
+    <p class="text">
+        It is also possible to import module files as songs.
+        Including instruments is optional: if you choose to then the new instruments and sequences will be added to the current project (it will not look for identical existing instruments).
+        If you choose not then only pattern data will be included, this is used to combine multiple files where the same instrument set is used.</p>
+
+    <p class="text">
+        You can also import <a href="groove_settings.htm">grooves</a> and the
+        <a href="detune_settings.htm">detune table</a> from the module file.
+        Note that importing the detune table will overwrite the existing table.</p>
+
+<h2 class="bold">Expansion sound checkboxes</h2>
+
+    <p>
+        <img id="IMG4" src="img/expansion_sound.png" alt="Screenshot of expansion sound section"></p>
+
+    <p class="text">
+        The expansion chip box is used to enable
+        <a href="sound_overview.htm">expansion chips</a>
+        for the module. Any combination of expansion chips may be enabled.</p>
+
+    <p class="text">
+        The channel count selector is only available for
+        <a href="n163.htm">Namco 163</a>.</p>
+
+<h2 class="bold"><a name="DeviceMixer">Device mixer</a></h2>
+
+    <p>
+        <img id="IMG5" src="img/device_mix_offset.png" alt="Screenshot of device mix offset section"></p>
+
+    <p class="text">
+        The Device mix offset box is used to adjust a module's
+        <a href="sound_overview.htm">expansion chip</a>
+        mixing level. They are correspondingly enabled by the current expansion 
+        chips used. These offsets are stored in the NSFe / NSF2
+        <a href="https://www.nesdev.org/wiki/NSFe#mixe" target="new"><code>mixe</code> chunk</a>,
+        upon export of compatible formats, for per-NSF hardware mixing.</p>
+
+    <p class="text">
+        The mixing will be adjusted in combination with the
+        <a href="config_mixer.htm">global hardware mixing levels</a>, if 
+        Hardware-based mixing is disabled.</p>
+
+    <p class="text">
+        The Hardware-based mixing checkbox toggles between default mixing
+        (legacy), and survey-based calibrated hardware mixing, whose 
+        measurements are based on the
+        <a href="https://forums.nesdev.org/viewtopic.php?t=17741">Brad Smith's
+        expansion audio mixing survey</a>.</p>
+
+    <p class="text">Dn-FamiTracker's hardware-based mixing are calibrated based
+        on NSFPlay's <code>mixe</code> chunk constants (in millibels):</p>
+    <ul class="text">
+        <li><b>2A03 APU1</b>: 0 (reference)</li>
+        <li><b>2A03 APU2</b>: -20</li>
+        <li><b>VRC6</b>: 0</li>
+        <li><b>VRC7</b>: 1340</li>
+        <li><b>FDS</b>: 690</li>
+        <li><b>MMC5</b>: 0</li>
+        <li><b>N163</b>: 1540</li>
+        <li><b>S5B</b>: -250</li>
+    </ul>
+
+    <p class="text">
+        Note that the
+        <a href="config_mixer.htm">global hardware mix configuration</a>
+        will be ignored when hardware-based mixing is enabled.</p>
+
+<h2 class="bold">OPLL settings</h2>
+
+    <p>
+        <img id="IMG6" src="img/opll_settings.png" alt="Screenshot of OPLL settings section"></p>
+
+    <p class="text">
+        The OPLL settings box is used to modify a module's current OPLL patch 
+        set when VRC7 expansion audio and the "Use external OPLL" checkbox is 
+        selected. This is intended for modules which use an external OPLL in 
+        place of VRC7 registers, such as TNS-HFC.</p>
+
+    <p class="text">
+        These settings are stored in the NSFe / NSF2
+        <a href="https://www.nesdev.org/wiki/NSFe#VRC7"><code>VRC7</code> chunk</a> upon export of compatible formats.</p>
+
+<h2 class="bold">Vibrato settings</h2>
+
+    <p>
+        <img id="IMG7" src="img/vibrato.png" alt="Screenshot of vibrato settings section"></p>
+
+    <p class="text">
+        There are two styles of vibrato. The new style bends the pitch both up 
+        and down, while the old style bends only bends the pitch down.
+        <br>
+        The new style is set by default for new songs while the old style is 
+        set by default for files created with earler versions of vanilla 
+        Famitracker. Here it's possible to change the style as you wish.
+        <br>
+        The new style was implemented since vanilla version 0.3.5.</p>
+
+<h2 class="bold">Pitch mode settings</h2>
+
+    <p>
+        <img id="IMG8" src="img/pitch_mode.png" alt="Screenshot of vibrato settings section"></p>
+
+    <p class="text">
+        Linear pitch treats all pitch effects on melodic channels uniformly by 
+        subdividing each semitone into 32 equal parts.
+        <br>
+        As of vanilla version 0.4.0, linear pitch was added but not available.
+        It is implemented in 0CC version 0.3.14.2.</p>
+
+    <hr />
+    <span class="footer">Back to <a href="interface.htm">interface</a> &middot; <a href="main_index.htm">main index</a></span>
+
+</BODY>
+</HTML>
